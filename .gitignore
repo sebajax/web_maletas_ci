@@ -13,6 +13,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 #codeigniter 4
 /writable/
 # misc
+env
 .env
 .DS_Store
 .env.local
@@ -25,4 +26,3 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
-env
