@@ -1,0 +1,79 @@
+h1,
+h2
+ {
+    color: #406885;
+}
+
+.container {
+    justify-content: center;
+}
+
+.header {
+    background-color: #406885;
+    color: #fafafa;
+}
+
+.footer {
+    overflow: auto;
+    background-color: #406885;
+    color: #fafafa;
+}
+
+p {
+    font-size: large;
+    text-align: justify;
+}
+
+a {
+    color: white;
+    font-size: large;
+}
+
+span.linkedin {
+    color: white;
+    font-size: medium;
+}
+
+textarea {
+    resize: none;
+}
+
+.form_display {
+    width: 75%;
+}
+
+.service {
+    color: #406885;
+}
+
+.service_title {
+    font-size: x-large;
+}
+
+.service_card {
+    height: 30vh;
+}
+
+@media screen and (max-width: 768px ) {
+    .cellphone {
+        display: none
+    }
+    .form_display {
+        width: 100%;
+    }
+    .service_card {
+        height: 40vh;
+    }
+}
+
+@media (min-width: 992px) { 
+    .desktop_services {
+        margin-right: 35px;
+    }    
+}
+
+@media (min-width: 1200px) { 
+    .form_display {
+        width: 50%;
+    }
+}

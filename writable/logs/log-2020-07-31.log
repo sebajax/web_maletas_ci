@@ -1,0 +1,42 @@
+CRITICAL - 2020-07-31 13:40:11 --> Invalid file: home.php
+#0 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+#1 /Applications/MAMP/htdocs/web_maletas_ci/system/Common.php(1119): CodeIgniter\View\View->render('home', Array, true)
+#2 /Applications/MAMP/htdocs/web_maletas_ci/app/Controllers/Home.php(5): view('home')
+#3 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#4 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/web_maletas_ci/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-07-31 13:40:11 --> Invalid file: home.php
+#0 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+#1 /Applications/MAMP/htdocs/web_maletas_ci/system/Common.php(1119): CodeIgniter\View\View->render('home', Array, true)
+#2 /Applications/MAMP/htdocs/web_maletas_ci/app/Controllers/Home.php(5): view('home')
+#3 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#4 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/web_maletas_ci/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-07-31 13:40:56 --> Invalid file: header.php
+#0 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('header.php')
+#1 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(525): CodeIgniter\View\View->render('header', NULL, true)
+#2 /Applications/MAMP/htdocs/web_maletas_ci/app/Views/home.php(22): CodeIgniter\View\View->include('header')
+#3 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(246): include('/Applications/M...')
+#4 /Applications/MAMP/htdocs/web_maletas_ci/system/Common.php(1119): CodeIgniter\View\View->render('home', Array, true)
+#5 /Applications/MAMP/htdocs/web_maletas_ci/app/Controllers/Home.php(5): view('home')
+#6 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#7 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/web_maletas_ci/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-31 13:40:56 --> Invalid file: header.php
+#0 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('header.php')
+#1 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(525): CodeIgniter\View\View->render('header', NULL, true)
+#2 /Applications/MAMP/htdocs/web_maletas_ci/app/Views/home.php(22): CodeIgniter\View\View->include('header')
+#3 /Applications/MAMP/htdocs/web_maletas_ci/system/View/View.php(246): include('/Applications/M...')
+#4 /Applications/MAMP/htdocs/web_maletas_ci/system/Common.php(1119): CodeIgniter\View\View->render('home', Array, true)
+#5 /Applications/MAMP/htdocs/web_maletas_ci/app/Controllers/Home.php(5): view('home')
+#6 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#7 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/web_maletas_ci/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/web_maletas_ci/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
