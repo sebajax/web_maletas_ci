@@ -10,6 +10,16 @@ user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
+#codeigniter 4
+/writable/
+# misc
+.env
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 #codeigniter 3
 application/logs/*
 !application/logs/index.html
