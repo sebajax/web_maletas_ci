@@ -10,7 +10,10 @@ h2
 
 .header {
     background-color: #406885;
-    color: #fafafa;
+}
+
+.fa.fa-navicon {
+    color:white;
 }
 
 .footer {
@@ -27,11 +30,6 @@ p {
 a {
     color: white;
     font-size: large;
-}
-
-span.linkedin {
-    color: white;
-    font-size: medium;
 }
 
 textarea {
