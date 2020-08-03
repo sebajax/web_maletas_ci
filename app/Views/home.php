@@ -26,12 +26,29 @@
 
         <script src="<?= base_url('resources/js/jquery.min.js'); ?>"></script>
         <script src="<?= base_url('resources/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
-        <script src="<?= base_url('resources/js/jquery.form-validation.min.js'); ?>"></script>
+        <script src="<?= base_url('resources/js/jquery.validate.min.js'); ?>"></script>
 
         <script type="text/javascript">
             $(function () {
-	            'use strict'
-                $(document).on('click', 'a[href^="#"]', function (event) {
+
+                jQuery.validator.setDefaults({
+                    errorElement: 'span',
+                    errorClass: 'is-invalid',
+                    validClass: 'is-valid', 
+
+                    errorPlacement: function (error, element) {
+                        error.addClass('invalid-feedback');
+                        element.closest('.input-group').append(error);
+                    },
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).addClass(errorClass).removeClass(validClass);
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).removeClass(errorClass).addClass(validClass);
+                    }
+                });         
+                
+	            $(document).on('click', 'a[href^="#"]', function (event) {
                     event.preventDefault();
 
                     $('html, body').animate({
@@ -39,10 +56,39 @@
                     }, 500);
                 });
 
-                $(document).on('blur', '[data-validator]', function () {
-                    new Validator($(this));
-                });      
+                $("#contacto_form").validate({
+                    rules: {
+                        nombre_completo: {
+                            required: true
+                        },
+                        telefono: {
+                            required: true
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        comentario: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        nombre_completo: "Debe ingresar nombre"
+                    },
+                    submitHandler: function (form) {
+                        alert('submiteo');
+                        form.submit();
+                    }
+                });
+/*
+                $("#contacto_form").submit(function(event) {
+                    event.preventDefault();
+                    var data = $(this).serializeArray();
+                    console.log(data);
+                }); 
+
             }); 
+*/
         </script>
 
     </head>
@@ -84,7 +130,7 @@
         <section id="contactenos">
             <?= $parser->setData(['title' => 'Contáctenos'])->render('components/title'); ?>
             <div class="container form_display">
-                <form class="shadow p-3 mb-5 rounded">
+                <form id="contacto_form" class="shadow p-3 mb-5 rounded" method="post">
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -92,8 +138,7 @@
                                 <i class="fas fa-user"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="nombre_completo" placeholder="Nombre completo" data-validator="required">
-                        <div class="invalid-feedback">Debe ingresar Nombre</div>
+                        <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" placeholder="Nombre completo">
                     </div>
 
                     <div class="input-group mb-3">
@@ -102,8 +147,7 @@
                                 <i class="fas fa-phone-alt"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono de contacto" data-validator="required|min:8">
-                        <div class="invalid-feedback">Debe ingresar Teléfono</div>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono de contacto">
                     </div>
 
                     <div class="input-group mb-3">
@@ -112,17 +156,15 @@
                                 <i class="fas fa-envelope"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="email" placeholder="Email" data-validator="required|email">
-                        <div class="invalid-feedback">Debe ingresar Email</div>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                     </div>
 
                     <div class="input-group mb-3">
-                    <textarea class="form-control" rows="6" id="comentario" placeholder="Mensaje" data-validator="required|min:10"></textarea>
-                        <div class="invalid-feedback">Debe ingresar Mensaje</div>
+                        <textarea class="form-control" rows="6" id="comentario" name="comentario" placeholder="Mensaje"></textarea>
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-primary" type="button">Enviar mensaje</Button>
+                        <button class="btn btn-primary" type="submit">Enviar mensaje</Button>
                     </div> 
 
                 </form>
