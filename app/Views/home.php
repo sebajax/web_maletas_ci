@@ -28,18 +28,21 @@
         <script src="<?= base_url('resources/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
         <script src="<?= base_url('resources/js/jquery.form-validation.min.js'); ?>"></script>
 
-        <script>
-            $(document).on('click', 'a[href^="#"]', function (event) {
-                event.preventDefault();
+        <script type="text/javascript">
+            $(function () {
+	            'use strict'
+                $(document).on('click', 'a[href^="#"]', function (event) {
+                    event.preventDefault();
 
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top
-                }, 500);
-            });
+                    $('html, body').animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 500);
+                });
 
-            $(document).on('blur', '[data-validator]', function () {
-                new Validator($(this));
-            });          
+                $(document).on('blur', '[data-validator]', function () {
+                    new Validator($(this));
+                });      
+            }); 
         </script>
 
     </head>
@@ -49,7 +52,7 @@
             <?= $this->include('components/header') ?>
         </section>
 
-        <div class="container text-center">
+        <div class="container text-center pt-5">
             <img src="<?= base_url('resources/images/logo.png'); ?>" alt="Transportes Oliveros" width="70%" />
         </div>
 
