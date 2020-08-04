@@ -70,6 +70,13 @@ textarea {
     }    
 }
 
+/* mobile navbar sidebar under lg breakpoint */
+@media (max-width: 992px) {
+    body {
+        padding-top: 55px;
+    }
+}
+
 @media (min-width: 1200px) { 
     .form_display {
         width: 50%;

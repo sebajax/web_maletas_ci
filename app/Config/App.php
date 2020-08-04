@@ -22,6 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 	public $baseURL = 'http://localhost:8888/web_maletas_ci/public';
+	//public $baseURL = 'http://192.168.1.95:8888/web_maletas_ci/public';
 
 	/*
 	|--------------------------------------------------------------------------
