@@ -12,12 +12,12 @@ class BeforeRequest implements FilterInterface {
         $ip = $request->getIPAddress();
 		//if (!$request->isSecure())
             //force_https();
-            
-		if(!$request->isValidIP($ip) || !$request->isAJAX() || !$request->hasHeader('Authorization')) {
+        
+        if(!$request->isValidIP($ip) || !Services::request()->isAJAX() || !Services::request()->hasHeader('Authorization')) {
             return Services::response()->setStatusCode(401);
         }
 		
-        $authHeader = $request->getHeader('Authorization');
+        $authHeader = Services::request()->getHeader('Authorization');
         list($token) = sscanf( $authHeader, 'Authorization: Bearer %s');
         if(!JwtToken::getToken($token)) {
             return Services::response()->setStatusCode(401);

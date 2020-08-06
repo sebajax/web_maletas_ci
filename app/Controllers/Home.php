@@ -18,6 +18,9 @@ class Home extends BaseController {
 	}
 
 	public function sendMessage() {
+		//Validate Request
+		//Send Email
+		//Send Succes or Fail message feedback
 		return $this->respond($this->request->getPost());
 	}
 
