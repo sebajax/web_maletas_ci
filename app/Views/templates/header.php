@@ -22,6 +22,7 @@
         <script src="<?= base_url('resources/js/jquery.min.js'); ?>"></script>
         <script src="<?= base_url('resources/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
         <script src="<?= base_url('resources/js/jquery.validate.min.js'); ?>"></script>
+        <script src="<?= base_url('resources/js/es_messages.js'); ?>"></script>
 
         <script type="text/javascript">
             $(function () {
@@ -42,7 +43,7 @@
                         $(element).removeClass(errorClass).addClass(validClass);
                     }
                 });
-                
+
 	            $(document).on('click', 'a[href^="#"]', function (event) {
                     event.preventDefault();
 

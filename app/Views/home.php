@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
     $(function () {
-
         const validator = $("#contacto_form").validate({
             rules: {
                 nombre_completo: {
@@ -25,21 +24,15 @@
                     minlength: 8
                 }
             },
-            messages: {
-                nombre_completo: "Debe ingresar su nombre",
-                telefono: "Debe ingresar teléfono de contacto",
-                email: {
-                    required: "Debe ingresar una cuenta de email",
-                    email: "Debe ingresar una cuenta de email valido"
-                },
-                comentario: "Debe ingresar un comentario"
-            },
             submitHandler: function (form, event) {
                 event.preventDefault();
                 const request = $(event.target).serializeArray();
-                //console.log(data);
+                const token = $("input[name=jwt]").val();
                 $.ajax({
                     url: "<?= base_url('/sendMessage') ?>",
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
                     method: 'POST',
                     dataType: 'json',
                     data: request,
@@ -52,13 +45,14 @@
                     console.log("fail", response);
                     showMessage("Error", "alert-danger");
                 });
-                //$(form)[0].reset();
-                
+                $(form)[0].reset();
             }
         });
     }); 
 
 </script>
+
+    <input type="hidden" name="jwt" value="<?= $token; ?>" />
 
     <div class="container text-center pt-5">
         <img src="<?= base_url('resources/images/logo.png'); ?>" alt="Transportes Oliveros" width="70%" />
