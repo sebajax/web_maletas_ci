@@ -27,25 +27,31 @@
             submitHandler: function (form, event) {
                 event.preventDefault();
                 const request = $(event.target).serializeArray();
-                const token = $("input[name=jwt]").val();
+                const jwt_token = $("input[name=jwt]").val();
+                const csrf_token = '<?= csrf_hash(); ?>'
                 $.ajax({
                     url: "<?= base_url('/sendMessage') ?>",
                     headers: {
-                        'Authorization': 'Bearer ' + token
+                        'Authorization': 'Bearer ' + jwt_token,
+                        '<?= csrf_header(); ?>': csrf_token
                     },
                     method: 'POST',
                     dataType: 'json',
-                    data: request,
+                    data: { 
+                        request,
+                    }
                 })
                 .done(function(response) {
-                    console.log("done", response);
+                    console.log(response);
+                    console.log("done", response['csrf_token']);
                     showMessage("Mensaje enviado!", "alert-success");
+                    $(form)[0].reset();
                 })
                 .fail(function(response) {
                     console.log("fail", response);
-                    showMessage("Error", "alert-danger");
+                    showMessage("Error: No se pudo enviar el mensaje", "alert-danger");
                 });
-                $(form)[0].reset();
+                validator.resetForm();
             }
         });
     }); 

@@ -2,12 +2,12 @@
 
 <script type="text/javascript">
     const showMessage = (message, type) => {
-        $('#message_content').replaceWith(message);
+        $('#message_content').html(message);
         $('#message').addClass(type);
-        $('#message').show(800);
+        $('#message').show(400);
         setTimeout(function() { 
-            $('#message').hide(800);
-        }, 5000);            
+            $('#message').hide(400);
+        }, 3000);            
     };
 </script>
 

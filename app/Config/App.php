@@ -21,8 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8888/web_maletas_ci/public';
-	//public $baseURL = 'http://192.168.1.95:8888/web_maletas_ci/public';
+	public $baseURL = '';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -100,7 +99,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'America/Santiago';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -248,7 +247,7 @@ class App extends BaseConfig
 	public $CSRFHeaderName = 'X-CSRF-TOKEN';
 	public $CSRFCookieName = 'csrf_cookie_name';
 	public $CSRFExpire     = 7200;
-	public $CSRFRegenerate = true;
+	public $CSRFRegenerate = false;
 	public $CSRFRedirect   = true;
 
 	/*

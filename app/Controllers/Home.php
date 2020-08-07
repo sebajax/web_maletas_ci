@@ -1,16 +1,15 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use App\Libraries\JwtToken;
 
 class Home extends BaseController {
 	
 	use ResponseTrait;
 
 	public function index() {
-		$token = JwtToken::setToken();
+		$jwt = service('jwt');
 		$data = [
-			'token' => $token
+			'token' => $jwt->setToken()
 		];
 		echo view('templates/header');
 		echo view('home', $data);
@@ -19,9 +18,13 @@ class Home extends BaseController {
 
 	public function sendMessage() {
 		//Validate Request
+		//Store info in DB
 		//Send Email
 		//Send Succes or Fail message feedback
-		return $this->respond($this->request->getPost());
+		$data = array(
+			'response' => $this->request->getPost()
+		);
+		return $this->respond($data);
 	}
 
 }
