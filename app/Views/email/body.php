@@ -13,9 +13,10 @@
                 line-height: 1.4;
                 margin: 0;
                 padding: 0;
-                padding-top: 50px;
+                padding-top: 30px;
                 -ms-text-size-adjust: 100%;
                 -webkit-text-size-adjust: 100%; 
+                width: 100%; 
             }  
             .title {
                 font-weight: bold;
@@ -25,21 +26,19 @@
                 color: #406885;
                 font-weight: 800;
                 margin: 0;
+                text-align: center;
             }           
             .container {
                 display: block;
                 margin: 0 auto !important;
                 /* makes it centered */
-                max-width: 580px;
-                padding: 10px;
-                width: 580px; 
+                width: 100%; 
             }
             .content {
                 background-color: white;
                 box-sizing: border-box;
                 display: block;
                 margin: 0 auto;
-                max-width: 580px;
                 padding: 10px;
                 box-shadow:  0 0 10px  rgba(0,0,0,0.6);
                 -moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
@@ -52,14 +51,24 @@
                 clear: both;
                 margin-top: 10px;
                 text-align: center;
-                width: 100%; }
-                .footer td,
-                .footer p,
-                .footer span,
-                .footer a {
-                color: #999999;
+                width: 100%; 
+                
+            }
+            .footer span {
                 font-size: 12px;
-                text-align: center; }   
+                text-align: center; 
+                color: #adadad;
+            }  
+            @media screen and (max-width: 768px ) {
+                .content {
+                    width: 100%;
+                }
+            }
+            @media (min-width: 1200px) { 
+                .content {
+                    width: 50%; 
+                }
+            }
         </style>
     </head>
 
@@ -77,10 +86,9 @@
                 <p><span class="title"> Comentario </span></p>
                 <p>{comentario}</p>
             </div>
-            <br />
-            <footer>
-                <span style="color: #adadad"> © 2020 Copyright: </span> 
-                <span style="color: #adadad"> Transportes Oliveros </span>                 
+            <footer class="footer">
+                <span> © 2020 Copyright: </span> 
+                <span> Transportes Oliveros </span>                 
             </footer>
         </div>
     </body>

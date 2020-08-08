@@ -35,20 +35,19 @@ class Home extends BaseController {
 				try {
 					$parser = \Config\Services::parser();
 					$parser->setData($this->request->getPost());
-					//$email = \Config\Services::email();
-					//$email->setFrom('web@transportesoliveros.cl', $this->request->getVar('nombre_completo'));
-					//$email->setTo('contacto@transportesoliveros.cl');
-					//$email->setSubject('Contacto web');
-					//$email->setMessage($parser->render('email/body'));
-					//if($email->send(false)) {
-						//var_dump($parser->render('email/body'));
+					$email = \Config\Services::email();
+					$email->setFrom('web@transportesoliveros.cl', $this->request->getVar('nombre_completo'));
+					$email->setTo('contacto@transportesoliveros.cl');
+					$email->setSubject('Contacto web');
+					$email->setMessage($parser->render('email/body'));
+					if($email->send(false)) {
 						$data = array(
 							'response' => $parser->render('email/body')
 						);
 						return $this->respond($data);
-					//}else {
-					//	return $this->failValidationError(ERROR_EMAIL);
-					//}
+					}else {
+						return $this->failValidationError(ERROR_EMAIL);
+					}
 				}catch(Exception $e) {
 					return $this->fail(ERROR_EMAIL, 400);
 				}
