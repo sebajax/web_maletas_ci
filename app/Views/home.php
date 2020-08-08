@@ -21,7 +21,7 @@
                 },
                 comentario: {
                     required: true,
-                    minlength: 8
+                    minlength: 10
                 }
             },
             submitHandler: function (form, event) {
@@ -37,9 +37,7 @@
                     },
                     method: 'POST',
                     dataType: 'json',
-                    data: { 
-                        request,
-                    }
+                    data: request,
                 })
                 .done(function(response) {
                     console.log(response);
@@ -47,9 +45,9 @@
                     showMessage("Mensaje enviado!", "alert-success");
                     $(form)[0].reset();
                 })
-                .fail(function(response) {
-                    console.log("fail", response);
-                    showMessage("Error: No se pudo enviar el mensaje", "alert-danger");
+                .fail(function(jqXHR) {
+                    console.log(jqXHR.responseJSON.messages.error);
+                    showMessage(jqXHR.responseJSON.messages.error, "alert-danger");
                 });
                 validator.resetForm();
             }
