@@ -29,8 +29,13 @@ class Home extends BaseController {
 			]);
 			if($validation) {
 				//Store info in DB
-				$homeModel = new HomeModel();
-				$homeModel->insert($this->request->getPost());
+				try {
+					$homeModel = new HomeModel();
+					$homeModel->insert($this->request->getPost());
+				}catch(\CodeIgniter\Database\Exceptions\DatabaseException $e) {
+					return $this->fail(ERROR_EMAIL, 400);
+				}
+
 				//Send Email
 				try {
 					$parser = \Config\Services::parser();

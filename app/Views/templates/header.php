@@ -9,7 +9,7 @@
 
         <title>Transportes Oliveros</title>
 
-        <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+        <link rel="shortcut icon" type="image/png" href="<?=base_url()?>/favicon.png"/>
 
         <!-- BOOTSTRAP - Load css files -->
         <link href="<?= base_url('resources/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css" />

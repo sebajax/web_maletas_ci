@@ -40,13 +40,10 @@
                     data: request,
                 })
                 .done(function(response) {
-                    console.log(response);
-                    console.log("done", response['csrf_token']);
                     showMessage("Mensaje enviado!", "alert-success");
                     $(form)[0].reset();
                 })
                 .fail(function(jqXHR) {
-                    console.log(jqXHR.responseJSON.messages.error);
                     showMessage(jqXHR.responseJSON.messages.error, "alert-danger");
                 });
                 validator.resetForm();
