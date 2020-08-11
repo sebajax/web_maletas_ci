@@ -13,8 +13,6 @@ class BeforeRequest implements FilterInterface {
         $res = service('response');
 
         $ip = $request->getIPAddress();
-		//if (!$request->isSecure())
-            //force_https();
         
         // Request validation
         if(!$req->isValidIP($ip) || !$req->isAJAX() || !$req->hasHeader('Authorization')) {
