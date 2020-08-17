@@ -44,7 +44,15 @@
                     $(form)[0].reset();
                 })
                 .fail(function(jqXHR) {
-                    showMessage(jqXHR.responseJSON.messages.error, "alert-danger");
+                    if(typeof jqXHR.responseJSON !== 'undefined') {
+                        if(typeof jqXHR.responseJSON.messages !== 'undefined') {
+                            showMessage(jqXHR.responseJSON.messages.error, "alert-danger");
+                        }else {
+                            showMessage("<?= ERROR_EMAIL; ?>", "alert-danger");
+                        }
+                    }else {
+                        showMessage("<?= ERROR_EMAIL; ?>", "alert-danger");
+                    }
                 });
                 validator.resetForm();
             }
