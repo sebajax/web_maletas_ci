@@ -8,7 +8,7 @@ class JwtToken {
 
     public static function setToken() {
         $key = env("jwt.key");
-        $expire     = time() + 60; // Adding 60 seconds
+        $expire     = time() + 1200; // Adding 1200 seconds
         $payload = array(
 			"iss" => site_url(),
 			"aud" => site_url(),

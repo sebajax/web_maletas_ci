@@ -24,3 +24,7 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 public/.DS_Store
+app/.DS_Store
+public/.DS_Store
+app/.DS_Store
+public/.DS_Store
